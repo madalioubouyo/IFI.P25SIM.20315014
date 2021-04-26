@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * 
  */
@@ -26,10 +24,10 @@ public class Aims {
 		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
 		anOrder.addDigitalVideoDisc(dvd3);
 		
-		/*for (int i = 0; i < anOrder.itemsOrdered.length; i++) {
-			System.out.println(anOrder.itemsOrdered[i].getTitle());
-		}*/		
-		//System.out.println(anOrder);
+		DigitalVideoDisc dvd4 = new DigitalVideoDisc("Test", "Animation", 50.99f);
+		anOrder.addDigitalVideoDisc(dvd4);
+		
+		//anOrder.removeDigitalVideoDisc(dvd4);
 		
 		System.out.println("Total coast is : ");
 		System.out.println(anOrder.totalCoast());

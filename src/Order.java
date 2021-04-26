@@ -6,25 +6,29 @@ public class Order {
 	
 	public static final int MAX_NUMBERS_ORDERED = 10;
 	
-	public DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
+	private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 	
-	int i = 0;
-	
-	//private Float totalCoast = 0.0f;
+	int i = 0, qtyOrdered = 0;
 	
 	public void addDigitalVideoDisc(DigitalVideoDisc disc) {
 		
-		itemsOrdered[i] = disc;
-		i++;
+		if(qtyOrdered < MAX_NUMBERS_ORDERED) {
+			itemsOrdered[i] = disc;
+			i++;
+			qtyOrdered++;
+		}else {
+			System.out.println("You can't add new disc, max elements reached");
+		}
+		
+		
 	}
 	
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
-		
-	//itemsOrdered = ArrayUtils.removeElement(itemsOrdered, disc);
 
 	  for (int i = 0; i < itemsOrdered.length; i++) {
 	       if (itemsOrdered[i] != null && itemsOrdered[i] == disc){
 	    	   itemsOrdered[i] = null;
+	    	   qtyOrdered--;
 	         break; 
 	       }
 	
@@ -39,8 +43,7 @@ public class Order {
 		
 		Float totalCoast = 0.0f;
 		
-		for (int i = 0; i < itemsOrdered.length; i++) {
-			//System.out.println(itemsOrdered[i].getCoast());
+		for (int i = 0; i < qtyOrdered; i++) {
 			totalCoast =  totalCoast + itemsOrdered[i].getCoast();
 		}
 		return totalCoast;
