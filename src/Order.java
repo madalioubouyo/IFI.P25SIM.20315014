@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author madaliou
  *
@@ -7,6 +10,7 @@ public class Order {
 	public static final int MAX_NUMBERS_ORDERED = 10;
 	
 	private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
+	private List<Product> listOfProducts = new ArrayList<Product>();
 	
 	int i = 0, qtyOrdered = 0;
 	
