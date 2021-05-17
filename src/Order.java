@@ -9,18 +9,18 @@ import java.util.List;
 		
 	private ArrayList<Product> itemOrdered = new ArrayList<Product>();
 	    
-		void addProduct(Product proc){
-			    	itemOrdered.add(proc);
+		void addProduct(Product product){
+			    	itemOrdered.add(product);
 			    	
 			
 		}
-		void removeProduct(Product proc){
+		void removeProduct(Product product){
 			if(!itemOrdered.isEmpty()) {
-				if(itemOrdered.contains(proc)) {
-					System.out.println("The product to remove is in postion " +(itemOrdered.indexOf(proc)+1));
-					itemOrdered.remove(proc);
+				if(itemOrdered.contains(product)) {
+					
+					itemOrdered.remove(product);
 				}else {
-					System.out.println("The removal product is not exist");
+					System.out.println("The removal product does not exist");
 				}
 			}else {
 				System.out.println("The product list is empty");
