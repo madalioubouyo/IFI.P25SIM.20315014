@@ -13,11 +13,10 @@ public abstract class Product {
 		/**
 		 * @param args
 		 */
+		private int ID;
 		private String title;
-		private String category;
-		private String director;
-		private int length;
-		private float coast;
+		private String category;		
+		private float cost;
 		
 		
 		
@@ -36,11 +35,11 @@ public abstract class Product {
 		 * @param category
 		 * @param coast
 		 */
-		public Product(String title, String category, float coast) {
+		public Product(String title, String category, float cost) {
 			super();
 			this.title = title;
 			this.category = category;
-			this.coast = coast;
+			this.cost = cost;
 		}
 
 
@@ -52,14 +51,7 @@ public abstract class Product {
 		 * @param length
 		 * @param coast
 		 */
-		public Product(String title, String category, String director, int length, float coast) {
-			super();
-			this.title = title;
-			this.category = category;
-			this.director = director;
-			this.length = length;
-			this.coast = coast;
-		}
+	
 
 
 
@@ -69,13 +61,6 @@ public abstract class Product {
 		 * @param director
 		 * @param coast
 		 */
-		public Product(String title, String category, String director, float coast) {
-			super();
-			this.title = title;
-			this.category = category;
-			this.director = director;
-			this.coast = coast;
-		}
 
 
 
@@ -107,53 +92,20 @@ public abstract class Product {
 			this.category = category;
 		}
 
-		/**
-		 * @return the director
-		 */
-		public String getDirector() {
-			return director;
-		}
-
-		/**
-		 * @param director the director to set
-		 */
-		public void setDirector(String director) {
-			this.director = director;
-		}
-
-		/**
-		 * @return the length
-		 */
-		public int getLength() {
-			return length;
-		}
-
-		/**
-		 * @param length the length to set
-		 */
-		public void setLength(int length) {
-			this.length = length;
-		}
-
+		
 		/**
 		 * @return the coast
 		 */
-		public float getCoast() {
-			return coast;
+		public float getCost() {
+			return cost;
 		}
 
 		/**
 		 * @param coast the coast to set
 		 */
-		public void setCoast(float coast) {
-			this.coast = coast;
+		public void setCost(float coast) {
+			this.cost = coast;
 		}
 		
-
-		public static void main(String[] args) {
-			// TODO Auto-generated method stub
-			
-
-		}
 
 	}

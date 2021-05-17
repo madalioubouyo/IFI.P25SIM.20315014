@@ -5,51 +5,38 @@ import java.util.List;
  * @author madaliou
  *
  */
-public class Order {
-	
-	public static final int MAX_NUMBERS_ORDERED = 10;
-	
-	private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
-	private List<Product> listOfProducts = new ArrayList<Product>();
-	
-	int i = 0, qtyOrdered = 0;
-	
-	public void addDigitalVideoDisc(DigitalVideoDisc disc) {
+	public class Order {
 		
-		if(qtyOrdered < MAX_NUMBERS_ORDERED) {
-			itemsOrdered[i] = disc;
-			i++;
-			qtyOrdered++;
-		}else {
-			System.out.println("You can't add new disc, max elements reached");
+	private ArrayList<Product> itemOrdered = new ArrayList<Product>();
+	    
+		void addProduct(Product proc){
+			    	itemOrdered.add(proc);
+			    	
+			
+		}
+		void removeProduct(Product proc){
+			if(!itemOrdered.isEmpty()) {
+				if(itemOrdered.contains(proc)) {
+					System.out.println("The product to remove is in postion " +(itemOrdered.indexOf(proc)+1));
+					itemOrdered.remove(proc);
+				}else {
+					System.out.println("The removal product is not exist");
+				}
+			}else {
+				System.out.println("The product list is empty");
+			}
+				
 		}
 		
-		
-	}
-	
-	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
-
-	  for (int i = 0; i < itemsOrdered.length; i++) {
-	       if (itemsOrdered[i] != null && itemsOrdered[i] == disc){
-	    	   itemsOrdered[i] = null;
-	    	   qtyOrdered--;
-	         break; 
-	       }
-	
-	       if (i == itemsOrdered.length - 1) {
-	           System.out.println("That requested item is not in this array.");
-	       }
-	  }
-
-	}
-	
-	public float totalCoast() {
-		
-		Float totalCoast = 0.0f;
-		
-		for (int i = 0; i < qtyOrdered; i++) {
-			totalCoast =  totalCoast + itemsOrdered[i].getCoast();
+		float totalCost(){
+			 float total_amount=0;
+			 if(!itemOrdered.isEmpty()) {
+				 for(int i = 0; i < itemOrdered.size(); i++) {
+					 total_amount=total_amount+itemOrdered.get(i).getCost();
+				 }
+			 }
+			 return total_amount;
 		}
-		return totalCoast;
-	}
+	
+	
 }

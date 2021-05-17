@@ -1,3 +1,6 @@
+
+import java.util.List;
+
 /**
  * 
  */
@@ -8,12 +11,21 @@
  */
 public class CompactDisc extends Product {
 	
+	private String artist;
+	private List<Track> tracks;
+	
+	public List<Track> getTracks() {
+		return tracks;
+	}
+
+	public void setTracks(List<Track> tracks) {
+		this.tracks = tracks;
+	}
+
 	public CompactDisc(String title) {
 		super(title);
 		// TODO Auto-generated constructor stub
 	}
-
-	private String artist;
 
 	public String getArtist() {
 		return artist;

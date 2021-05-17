@@ -6,11 +6,10 @@
  * @author madaliou
  *
  */
-public class Track {
+public class TalkingChapter {
+	private String title;
 	
-private String title;
-	
-	public Track(String title) {
+	public TalkingChapter(String title) {
 		this.title = title;
 		// TODO Auto-generated constructor stub
 	}
